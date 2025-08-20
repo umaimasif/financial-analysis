@@ -6,4 +6,3 @@ langchain-google-genai
 langchain-community
 tavily-python
 pandas
-langgraph.checkpoint.sqlite
