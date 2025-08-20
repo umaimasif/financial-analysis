@@ -24,7 +24,7 @@ llm_name = "gemini-1.5-flash"
 model = ChatGoogleGenerativeAI(api_key=google_api_key, model=llm_name)
 
 tavily = TavilyClient(api_key=tavily_api_key)
-memory = SqliteSaver.from_conn_string("sqlite:///financial_memory.db")
+#memory = SqliteSaver.from_conn_string("sqlite:///financial_memory.db")
 #memory = SqliteSaver.from_conn_string(":memory:")
 
 
@@ -198,7 +198,7 @@ builder.add_conditional_edges(
 builder.add_edge("collect_feedback", "research_critique")
 builder.add_edge("research_critique", "compare_performance")
 
-graph = builder.compile(checkpointer=memory)
+graph = builder.compile()
 
 
 # ========== Streamlit UI ==========
