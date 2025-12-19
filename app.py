@@ -20,7 +20,7 @@ load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
 tavily_api_key = os.getenv("TAVILY_API_KEY")
 
-llm_name = "gemini-1.5-flash"
+llm_name = "models/gemini-2.5-flash-lite"
 model = ChatGoogleGenerativeAI(api_key=google_api_key, model=llm_name)
 
 tavily = TavilyClient(api_key=tavily_api_key)
@@ -243,6 +243,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
