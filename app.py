@@ -95,9 +95,8 @@ def analyze_data_node(state: AgentState):
     response = model.invoke(messages)
     return {"analysis": response.content}
 
-
 def research_competitors_node(state: AgentState):
-    content = state.get("content", [])
+    content = state.get("content") or []
     for competitor in state["competitors"]:
         queries = model.with_structured_output(Queries).invoke(
             [
@@ -149,6 +148,8 @@ def research_critique_node(state: AgentState):
         ]
     )
     content = state.get("content", [])
+    if content is None:
+      content = []
     for q in queries.queries:
         try:
             response = tavily.search(query=q, max_results=2)
@@ -243,6 +244,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
