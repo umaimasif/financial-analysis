@@ -6,3 +6,7 @@ langchain-google-genai
 langchain-community
 tavily-python
 pandas
+pydantic
+transformers
+sentence-transformers
+
