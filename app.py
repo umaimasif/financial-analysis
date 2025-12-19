@@ -26,6 +26,8 @@ model = ChatGoogleGenerativeAI(api_key=google_api_key, model=llm_name)
 tavily = TavilyClient(api_key=tavily_api_key)
 #memory = SqliteSaver.from_conn_string("sqlite:///financial_memory.db")
 #memory = SqliteSaver.from_conn_string(":memory:")
+memory = None  # Skip persistence for now
+
 
 
 # ========== Agent State ==========
@@ -241,4 +243,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
