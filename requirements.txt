@@ -1,7 +1,7 @@
 streamlit
 python-dotenv
 langchain
-langgraph
+langgraph==0.1.6 
 langchain-google-genai
 langchain-community
 tavily-python
@@ -9,4 +9,5 @@ pandas
 pydantic
 transformers
 sentence-transformers
+
 
