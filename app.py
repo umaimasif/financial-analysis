@@ -6,7 +6,7 @@ import json
 
 from langgraph.graph import StateGraph, END
 from typing import TypedDict, List
-from langchain_core.pydantic_v1 import BaseModel
+from pydantic import BaseModel
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.checkpoint.sqlite import SqliteSaver
 import pandas as pd
@@ -241,3 +241,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
